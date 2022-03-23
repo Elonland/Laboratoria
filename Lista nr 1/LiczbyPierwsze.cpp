@@ -1,17 +1,13 @@
 #include <iostream>
 
 #include "LiczbyPierwsze.hpp"
-
-class LiczbyPierwsze
-{
 	
 	//Constructor creates array from 2 to n.
-	LiczbyPierwsze(int range)
+	LiczbyPierwsze::LiczbyPierwsze(int range)
 	{
-	  int* n = malloc(sizeof(int));
 	  using namespace std;
-	  n = &range;
-	  int* tab[] = new int[range - 1];
+	  n = range;
+	  tab = new int[range - 1];
     	  for(int i = 0; i <= range - 2; i++)
       	    tab[i] = i + 2;
       	  
@@ -27,7 +23,7 @@ class LiczbyPierwsze
     	    The loop below moves next prime numbers to delete 0 which are between
     	    them.
     	  */
-    	  int count = 0;
+    	  unsigned int count = 0;
     	  for(int i = 0; i < range - 1; i++)
     	  {				    
     	    if(tab[i] != 0)
@@ -45,15 +41,17 @@ class LiczbyPierwsze
 	}
 	
 	//Method writes the m prime number.
-	public int liczba(int m)
+	int LiczbyPierwsze::liczba(int m)
 	{
 	  using namespace std;
 	  if(m <= n - 2)
 	    return tab[m];
 	  else 
 	    return 0;
-	};
-	delete tab;
-	delete n;
-//std::ostream & operator<<(std::ostream & out, LiczbyPierwsze * t) { return out<<t->t; };
-};
+	}
+	LiczbyPierwsze::~LiczbyPierwsze()
+	{
+	  delete[] tab;
+	}
+
+

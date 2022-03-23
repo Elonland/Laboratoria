@@ -1,16 +1,16 @@
 #include <iostream>
 #include "LiczbyPierwsze.hpp"
-    public static void main(int argc, char *argv[])
+    int main(int argc, char *argv[])
     {
 	using namespace std;
-        int tabl[] = new int[argv.length];
-        for(int i = 0; i < args.length; i++)
+        int* tabl = new int[argc];
+        for(int i = 0; i < argc - 1; i++)
         {
 		try
 		{
-		  tabl[i] = Integer.parseInt(args[i]);
+		  tabl[i] = stoi(argv[i+1]);
 		}
-		catch (NumberFormatException ex) 
+		catch (invalid_argument ex) 
 		{
 		  cout << argv[i] << " - nieprawdidlowa dana" << endl;
 		}
@@ -20,18 +20,18 @@
 	{
           LiczbyPierwsze *nowy = new LiczbyPierwsze(tabl[0]);
 
-          for(int i = 1; i < args.length; i++)
+          for(int i = 1; i < argc - 1; i++)
           {
 	    if(tabl[i]  < 0 || nowy->liczba(tabl[i]) == 0)
 	      cout << tabl[i] << " - liczba spoza zakresu" << endl;
 	    else
 	      cout << tabl[i] << " - " << nowy->liczba(tabl[i]) << endl;
           }
-
+          delete nowy;
 	}
 	else
 	  cout << "Bledny zakres" << endl;
 
-    delete nowy;
+      delete[] tabl;
     }
 
