@@ -1,0 +1,1 @@
+clang++ -Weverything -pedantic -std=c++17 Test.cpp Square.cpp Rombus.cpp Rectangle.cpp Pentagon.cpp Hexagon.cpp Circle.cpp -o test.out

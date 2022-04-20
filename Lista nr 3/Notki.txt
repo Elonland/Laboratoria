@@ -1,0 +1,17 @@
+Ogólne:
+    Dla ujemnych danych mam wszędzie explicit (nie musimy zatrzymywać programu).
+
+Czworokąt:
+    Dla danych "1 2 3 4 90" wypisze nam złe dane (nie musimy zatrzymywać programu).
+    Dla danych "90 90 90 90" dalej będzie działać.
+    Dla danych typu char ustawiamy bool na true i skaczemy w kolejce
+    Jak wyjdzie poza tablice to program kończy się czyszcząc tablice.
+    Romb sprawdza co jest kątem a co nie jest wywala Exception gdy złe dane.
+
+Reszta:
+    ogarnąć Exception dla reszy oraz połącz je done.
+
+
+Problem:
+    Dla danych "20 20 90 90 90" program weźmie to jako kwadrat;
+        pomysł: jak wczytuje danych zrobić licznik który liczy ile 90 jest mają być 3.
