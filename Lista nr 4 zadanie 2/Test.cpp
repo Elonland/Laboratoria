@@ -60,6 +60,7 @@ int main(int argc, char *argv[])
     }
     delete Object;
 	delete[] Input;
+	return 0;
             
 }
     

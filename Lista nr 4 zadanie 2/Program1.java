@@ -75,7 +75,7 @@ class MyFrame extends Frame
             inputForTest = input.getText();
             ProcessBuilder   ps=new ProcessBuilder("Test.out");
             ps.redirectErrorStream(true);
-            Process pr = Runtime.getRuntime().exec("Test.out" + inputForTest);
+            Process pr = Runtime.getRuntime().exec("./Test.out" + " " + inputForTest);
             BufferedReader in = new BufferedReader(new InputStreamReader(pr.getInputStream()));
                     
             String line;
